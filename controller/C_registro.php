@@ -1,32 +1,51 @@
 <?php
 require_once '../model/conexion.php';
 require_once '../model/usuario.php';
+
 class C_registro
 {
     public function returnManejos()
-    {
-        $action = isset($_GET['action']) ? $_GET['action'] : '';
-        switch ($action) {
-            case 'registrar':
-                $this->registrar();
-                break;
-            default:
-                echo 'errorcito perron';
-                break;
-        }
+        {
+    $action = isset($_GET['action']) ? $_GET['action'] : '';
+    if ($action == 'registrar') {
+        $this->registrar();
     }
-    public function registrar()
-    {
-        $nombre = $_POST['nombre'];
-        $correo = $_POST['correo'];
-        $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
+}
 
-        $conexion = new Conexion();
-        $usuarios = new Usuario($conexion->getConn());
-        $usuarios->agregarUsuario($nombre, $correo, $contrasena);
+public function registrar()
+{
+    $nombre = trim($_POST['nombre']);
+    $correo = trim($_POST['correo']);
+    $contrasena = trim($_POST['contrasena']);
 
-        header('Location: index.php');
-        exit;
+    // Verificar si los campos están vacíos
+    if (empty($nombre) || empty($correo) || empty($contrasena)) {
+        echo 'Por favor, complete todos los campos';
+        return;
     }
+
+    // Validar la dirección de correo electrónico
+    $email_regex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+    if (!preg_match($email_regex, $correo)) {
+        echo "La dirección de correo electrónico no es válida";
+        return;
+    }
+
+    $conexion = new Conexion();
+    $usuarios = new Usuario($conexion->getConn());
+
+    // Verificar si el correo electrónico ya está registrado en la base de datos
+    if ($usuarios->existeCorreo($correo)) {
+        echo "El correo electrónico ya está registrado";
+        return;
+    }
+
+    $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
+    $usuarios->agregarUsuario($nombre, $correo, $contrasena_hash);
+
+    header('Location: index.php');
+    exit;
+}
+
 }
 ?>

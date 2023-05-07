@@ -1,16 +1,25 @@
 <?php
-    class Usuario{
-        private $conexion;
-
-        public function __construct($conexion){
-            $this->conexion = $conexion;
+    class Usuario
+    {
+        private $conn;
+    
+        public function __construct($conn)
+        {
+            $this->conn = $conn;
         }
-
-    public function agregarUsuario($nombre, $correo, $contrasena){
-        $stmt = $this->conexion->prepare("INSERT INTO tbl_usuarios(name_user, mail_user, pass_user) VALUES(?,?,?)");
-        $stmt->bind_param("sss", $nombre, $correo, $contrasena);
-        $stmt->execute();
-        $stmt->close();
+    
+        // ... otros métodos de la clase ...
+    
+        public function existeCorreo($correo)
+        {
+            $stmt = $this->conn->prepare("SELECT COUNT(*) FROM tbl_usuarios WHERE mail_user = ?");
+            $stmt->bind_param("s", $correo);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+            $stmt->close();
+    
+            return $count > 0;
+        }
     }
-}
 ?>

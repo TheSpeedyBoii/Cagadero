@@ -14,13 +14,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
+<<<<<<< HEAD
+    <div class="container">
+        <form action="index.php?action=registrar" method="post">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo electrónico">
+            </div>
+            <div class="mb-3">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+    </div>
+=======
     <form action="index.php?action=registrar" method="post">
         <input type="text" name="nombre" placeholder="nombre">
         <input type="mail" name="correo" placeholder="email">
         <input type="password" name="contrasena" placeholder="contraseña">
         <input type="submit" value="enviar">
     </form>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
+    <h1>...</h1>
 </body>
 </html>
