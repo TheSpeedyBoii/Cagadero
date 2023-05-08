@@ -43,7 +43,7 @@ public function registrar()
     $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
     $usuarios->agregarUsuario($nombre, $correo, $contrasena_hash);
 
-    header('Location: index.php');
+    header('Location: login.php');
     exit;
 }
 
