@@ -1,5 +1,5 @@
 body {
-    background-color: #669bbc;
+    background: rgb(69,123,157);
     font-family: Roboto;
   }
   img{
@@ -33,5 +33,12 @@ body {
   .btn-primary {
     margin-top: 20px;
     justify-content: center;
+    border: none;
+    background: rgb(115, 203, 209);
+    transition: ease-in-out 0.5s;
+    color: rgb(22, 22, 22);
   }
-  
+  .btn-primary:hover {
+    background: #003049;
+    color: white;
+  }
