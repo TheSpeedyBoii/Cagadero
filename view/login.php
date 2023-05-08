@@ -1,5 +1,6 @@
 <?php
-
+    require_once ('../model/conexion.php');
+    require_once ('../controller/M_login.php');
 ?>
 
 <!DOCTYPE html>
