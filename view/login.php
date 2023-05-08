@@ -1,6 +1,6 @@
 <?php
     require_once ('../model/conexion.php');
-    require_once ('../controller/M_login.php');
+    require_once ('../model/M_login.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
         <input type="mail" name= "correo" placeholder= "Correo">
         <input type="password" name= "contrasena" placeholder= "Contraseña">
         <input type="submit" value="Enviar">
-        <a href="index.php">Registrarse</a>
+        <a href="register.php">Registrarse</a>
     </form>
 </body>
 </html>
