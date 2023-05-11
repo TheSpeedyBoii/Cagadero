@@ -17,6 +17,7 @@
         <input type="password" name= "contrasena" placeholder= "Contraseña">
         <input type="submit" value="Enviar">
         <a href="index.php">Registrarse</a>
+        <h1>TU PAPA</h1>
     </form>
 </body>
 </html>
