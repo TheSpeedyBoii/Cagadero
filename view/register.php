@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
+<<<<<<< HEAD
     <img src="images/register/logo.png" alt="">
+=======
+    <img src="images\register/logo.png" alt="">
+>>>>>>> 2defac7b318d2b93db899ccc94e7ec4ee2bc0de8
     <div class="container">
         <div class="form-container">
             <form action="register.php?action=registrar" method="post">
