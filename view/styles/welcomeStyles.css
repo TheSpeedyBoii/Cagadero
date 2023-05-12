@@ -30,9 +30,9 @@ nav ul li{
     cursor: pointer;
 }
 nav ul li:hover{
-    color: #588157;
+    color: rgb(69,123,157);
     transition: ease-in-out 0.15s;
-    border-bottom: solid #588157;
+    border-bottom: solid rgb(69,123,157);
 }
 ul img{
     float: left;
