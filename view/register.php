@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../view/register.css">
 </head>
 <body>
-    <img src="images\landing/logo.png" alt="">
+    <img src="images\register/logo.png" alt="">
     <div class="container">
         <div class="form-container">
             <form action="register.php?action=registrar" method="post">
