@@ -17,7 +17,7 @@
         <input type="mail" name= "correo" placeholder= "Correo">
         <input type="password" name= "contrasena" placeholder= "Contraseña">
         <input type="submit" value="Enviar">
-        <a href="register.php">Registrarse</a>
+        <a href="index.php">Registrarse</a>
     </form>
 </body>
 </html>
