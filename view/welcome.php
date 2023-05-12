@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="background">
-            
+
         </div>
         <nav>
             <img src="images/landing/Logo.png" alt="">
@@ -20,13 +20,18 @@
                 <li>Destinos</li>
                 <li>Tarifas</li>
                 <li>Contactanos</li>
-                <li>Login</li>
+                <li>Salir</li>
             </ul>
         </nav>
     </header>
     <section>
         <div class="background"><img src="images/landing/background.jpg" alt="">
-            <div class="search"></div>
+            <div class="search"><select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select></div>
         <div class="sites">
             <div class="site">
                 <div class="site-img"><img src="" alt=""></div>
