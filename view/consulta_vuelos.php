@@ -50,8 +50,7 @@
           echo"<td>".$vuelo['hora_llegada']."</td>";
           echo"<td>".$vuelo['estado']."</td>";
           echo"<td>".$vuelo['asientos_disponibles']."</td>";
-          echo"<td>".$vuelo['precio']."</td>";
-
+          echo "<td>COP " . number_format($vuelo['precio'], 0, ',', '.') . "</td>";
         }
       }
     ?>
