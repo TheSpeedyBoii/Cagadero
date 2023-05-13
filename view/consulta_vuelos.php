@@ -1,3 +1,7 @@
+<?php
+  require_once('../controller/C_consultas.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,12 +27,34 @@
       <th scope="col">Hora Salida</th>
       <th scope="col">Hora Llegada</th>
       <th scope="col">Estado</th>
-      <th scope="col">Asientos Disponibles</th>
+      <th scope="col">Asientos</th>
       <th scope="col">Precio</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <?php
+      if(!$vuelos){
+        echo"<tr>";
+        echo"<td>";
+        echo"No hay vuelos para esta fecha";
+        echo"</td>";
+        echo"</tr>";
+      }else{
+        foreach($vuelos as $vuelo){
+          echo"<tr>";
+          echo"<td>".$vuelo['codigo_vuelo']."</td>";
+          echo"<td>".$vuelo['id_ruta']."</td>";
+          echo"<td>".$vuelo['fecha_salida']."</td>";
+          echo"<td>".$vuelo['fecha_llegada']."</td>";
+          echo"<td>".$vuelo['hora_salida']."</td>";
+          echo"<td>".$vuelo['hora_llegada']."</td>";
+          echo"<td>".$vuelo['estado']."</td>";
+          echo"<td>".$vuelo['asientos_disponibles']."</td>";
+          echo"<td>".$vuelo['precio']."</td>";
+
+        }
+      }
+    ?>
       
   </tbody>
 </table>
