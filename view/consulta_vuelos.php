@@ -43,7 +43,7 @@
         foreach($vuelos as $vuelo){
           echo"<tr>";
           echo"<td>".$vuelo['codigo_vuelo']."</td>";
-          echo"<td>".$vuelo['id_ruta']."</td>";
+          echo"<td>".$vuelo['ruta']."</td>";
           echo"<td>".$vuelo['fecha_salida']."</td>";
           echo"<td>".$vuelo['fecha_llegada']."</td>";
           echo"<td>".$vuelo['hora_salida']."</td>";
