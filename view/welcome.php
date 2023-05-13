@@ -14,32 +14,34 @@
     require_once 'header.php';
     ?>
     <section>
-        <h2 class="titulo">Vuelos</h2>
+        <div class="buscador">
+        <h2 class="titulo">Busca tu vuelo</h2>
         <div class="search">
             <select>
-                <option selected>Open this select menu</option>
+                <option selected>Rutas Disponibles</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
             <input type="date">
-            <input type="submit">
+            <input class="btn-buscar" type="submit">
+        </div>
         </div>
         <div class="sites">
             <div class="site">
                 <div class="site-img"><img src="images/landing/Cartagena.jpg" alt=""></div>
                 <h2>Cartagena</h2>
-                <p>CARTAGENA</p>
+                <p>Descubre la belleza de Cartagena. Playas impresionantes, una historia fascinante y cultura vibrante te esperan.</p>
             </div>
             <div class="site">
                 <div class="site-img"><img src="images/landing/Medellin.jpg" alt=""></div>
                 <h2>Medellin</h2>
-                <p>METRALLO</p>
+                <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
             </div>
             <div class="site">
                 <div class="site-img"><img src="images/landing/Turbo.jpg" alt=""></div>
                 <h2>Turbo</h2>
-                <p>TURBOKISTAN</p>
+                <p>Descubre Turbo en la costa caribeña de Colombia: playas paradisíacas, selva tropical y cultura local te esperan en esta joya escondida.</p>
             </div>
         </div>
     </section>
