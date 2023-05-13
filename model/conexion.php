@@ -6,14 +6,13 @@
 
             try{
                 $this->con = new mysqli('localhost', 'root', '', 'database');
-                echo "conexion nice";
+                echo "Conexion Exitosa";
             }catch(Exception $pe){
-                echo "errora" . $pe->getMessage();
+                echo "Error en la Conexion" . $pe->getMessage();
             }
         }
 
         public function getConn(){
-            echo "nones";
             return $this->con;
         }
     }
