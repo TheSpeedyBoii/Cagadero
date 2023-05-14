@@ -1,24 +1,24 @@
 <?php
 
-    require_once('model/conexion.php');
+    require_once('../model/conexion.php');
+    require_once('../controller/CtrlMain.php');
+    require_once('controller/Mlogin.php');
 
-    class login extends conexion{
+    class LoginUsuario{
 
-      function validarlogin($correo,$contrasena){
-          $sql = "SELECT tbl_usuarios, mail_user FROM tbl_usuarios ";
-          $result = $con->query($sql);
-          if ($result->num_rows > 0) {
-              // output data of each row
-              while($row = $result->fetch_assoc()) {
-                echo "So' ta bueno";
-              }
-            } else {
-              echo "No hay ni pipiza pa'";
-            }
-            $conn->close();
+      private $conexion;
+
+      public function __construct($conexion){
+          $this->conexion = $conexion;
       }
 
-
+    public function getUsuarios($correo, $contrasena){
+      $stmt = $this->conexion->prepare("SELECT mail_user, pass_user from tblusuarios VALUES(?,?)");
+      $stmt->bind_param("ss", $correo, $contrasena);
+      $stmt->execute();
+      $stmt->close();
+      echo"melo caramelo";
     }
+  }
 
 ?>
