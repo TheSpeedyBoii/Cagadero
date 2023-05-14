@@ -40,13 +40,13 @@
             </div>
         </form>
     </section>
-    <section>
+    <section class="cities">
         <div class="container text-center sites">
             <div class="row align-items-center site">
                 <div class="col site-img">
                     <img src="images/landing/Cartagena.jpg" alt="">
                     <h2>Cartagena</h2>
-                    <p>Descubre la belleza de Cartagena. Playas impresionantes, una historia fascinante y cultura vibrante, acompañado de diferentes islas lejanas.</p>
+                    <p>Descubre la belleza de Cartagena. Playas impresionantes, una historia fascinante y cultura vibrante, acompañado de diferentes islas.</p>
                 </div>
                 <div class="col site-img">
                     <img src="images/landing/Medellin.jpg" alt="">
@@ -54,14 +54,9 @@
                     <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
                 </div>
                 <div class="col site-img">
-                    <img src="images/landing/Turbo.jpg" alt="">
+                    <img src="images/landing/Apartado.jpg" alt="">
                     <h2>Turbo</h2>
                     <p>Descubre Turbo en la costa caribeña de Colombia: playas paradisíacas, selva tropical y cultura local te esperan en esta joya escondida.</p>
-                </div>
-                <div class="col site-img">
-                    <img src="images/landing/Apartado.jpg" alt="">
-                    <h2>Apartadó</h2>
-                    <p>Descubre la mejor ciudad del Urabá. Montañas tropicales y banquetes culinarios extraordinarios por desucubrir en todo lugar ¡Te esperamos!</p>
                 </div>
             </div>
         </div>

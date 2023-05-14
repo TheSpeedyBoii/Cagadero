@@ -12,10 +12,9 @@
 <header>
     <nav class="nav nav justify-content-end">
         <img src="images/register/logo.png" alt="">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Disabled</a>
+        <a class="nav-link active" aria-current="page" href="#">Destinos</a>
+        <a class="nav-link" href="#">Tarifas</a>
+        <a class="nav-link" href="#">Conctáctanos</a>
     </nav>
 </header>
 </body>
