@@ -10,15 +10,12 @@
     <link rel="stylesheet" href="styles/header.css">
 </head>
 <header>
-        <nav>
-            <img src="images/register/Logo.png" alt="">
-            <ul>
-                <li>Destinos</li>
-                <li>Tarifas</li>
-                <li>Contactanos</li>
-                <li>Salir</li>
-            </ul>
-        </nav>
+    <nav class="nav">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Disabled</a>
+    </nav>
 </header>
 </body>
 </html>

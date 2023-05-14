@@ -1,3 +1,15 @@
 h2{
     text-align: center;
 }
+
+.search{
+    display: flex;
+    justify-content: center;
+    margin:20px;
+}
+
+.row{
+    background-color: aqua;
+    display: flex;
+    margin: 0;
+}
