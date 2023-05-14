@@ -17,39 +17,52 @@
     <?php
     require_once 'header.php';
     ?>
+    <h1 class="titulo">Busca tu vuelo</h1>
+    <section class="buscador">
+        <form class="row g-3" method="POST" action="consulta_vuelos.php">
+            <div class="col-auto">
+                <label for="ruta">Ruta</label>
+                <select class="form-control" name="ruta">
+                    <?php
+                        foreach($rutas as $ruta){
+                            $id = $ruta['id_ruta'];
+                            echo"<option value='$id'>".$ruta['descripcion']."</option>";
+                            }
+                    ?>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label for="inputPassword2">Fecha</label>
+                <input type="date" name="fecha">
+            </div>
+            <div class="col-auto">
+                <input class="btn-buscar" type="submit" name="buscar_ruta" value="Consultar">
+            </div>
+        </form>
+    </section>
     <section>
-        <div class="buscador">
-        <h2 class="titulo">Busca tu vuelo</h2>
-        <div class="search">
-        <form method="POST" action="consulta_vuelos.php" class="form-inline">
-            <select class="form-control" name="ruta">
-            <?php 
-                foreach($rutas as $ruta){
-                    $id = $ruta['id_ruta'];
-                    echo"<option value='$id'>".$ruta['descripcion']."</option>";
-                    }
-            ?>
-            </select>
-            <input type="date" name="fecha">
-            <input class="btn-buscar" type="submit" name="buscar_ruta">
-            </form>
-        </div>
-        </div>
-        <div class="sites">
-            <div class="site">
-                <div class="site-img"><img src="images/landing/Cartagena.jpg" alt=""></div>
-                <h2>Cartagena</h2>
-                <p>Descubre la belleza de Cartagena. Playas impresionantes, una historia fascinante y cultura vibrante te esperan.</p>
-            </div>
-            <div class="site">
-                <div class="site-img"><img src="images/landing/Medellin.jpg" alt=""></div>
-                <h2>Medellin</h2>
-                <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
-            </div>
-            <div class="site">
-                <div class="site-img"><img src="images/landing/Turbo.jpg" alt=""></div>
-                <h2>Turbo</h2>
-                <p>Descubre Turbo en la costa caribeña de Colombia: playas paradisíacas, selva tropical y cultura local te esperan en esta joya escondida.</p>
+        <div class="container text-center sites">
+            <div class="row align-items-center site">
+                <div class="col site-img">
+                    <img src="images/landing/Cartagena.jpg" alt="">
+                    <h2>Cartagena</h2>
+                    <p>Descubre la belleza de Cartagena. Playas impresionantes, una historia fascinante y cultura vibrante, acompañado de diferentes islas lejanas.</p>
+                </div>
+                <div class="col site-img">
+                    <img src="images/landing/Medellin.jpg" alt="">
+                    <h2>Medellin</h2>
+                    <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
+                </div>
+                <div class="col site-img">
+                    <img src="images/landing/Turbo.jpg" alt="">
+                    <h2>Turbo</h2>
+                    <p>Descubre Turbo en la costa caribeña de Colombia: playas paradisíacas, selva tropical y cultura local te esperan en esta joya escondida.</p>
+                </div>
+                <div class="col site-img">
+                    <img src="images/landing/Apartado.jpg" alt="">
+                    <h2>Apartado</h2>
+                    <p>Descubre la mejor ciudad del Urabá. Montañas tropicales y banquetes culinarios extraordinarios por desucubrir en todo lugar ¡Te esperamos!</p>
+                </div>
             </div>
         </div>
     </section>
