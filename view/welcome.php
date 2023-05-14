@@ -1,3 +1,7 @@
+<?php
+  require_once('../controller/C_consultas.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +22,12 @@
         <h2 class="titulo">Busca tu vuelo</h2>
         <div class="search">
             <select>
-                <option selected>Rutas Disponibles</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <?php 
+                foreach($rutas as $ruta){
+                    $id = $ruta['id_ruta'];
+                    echo"<option value='$id'>".$ruta['descripcion']."</option>";
+                        }
+                        ?>
             </select>
             <input type="date">
             <input class="btn-buscar" type="submit">

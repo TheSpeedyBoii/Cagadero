@@ -19,5 +19,21 @@
             }
             return $retorno;
         }
-    }
+
+        public function getRutas(){
+            $con = new Conexion();
+            $conn = $con->getConn();
+            $query = $conn->query("SELECT *
+            FROM tbl_ruta");
+
+            $retorno = [];
+
+            $i = 0;
+            while($fila = $query->fetch_assoc()){
+                $retorno[$i] = $fila;
+                $i++;
+            }
+            return $retorno;
+        }
+    }    
 ?>
