@@ -21,16 +21,18 @@
         <div class="buscador">
         <h2 class="titulo">Busca tu vuelo</h2>
         <div class="search">
-            <select>
+        <form method="POST" action="consulta_vuelos.php" class="form-inline">
+            <select class="form-control" name="ruta">
             <?php 
                 foreach($rutas as $ruta){
                     $id = $ruta['id_ruta'];
                     echo"<option value='$id'>".$ruta['descripcion']."</option>";
-                        }
-                        ?>
+                    }
+            ?>
             </select>
             <input type="date">
-            <input class="btn-buscar" type="submit">
+            <input class="btn-buscar" type="submit" name="buscar_ruta">
+            </form>
         </div>
         </div>
         <div class="sites">
