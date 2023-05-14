@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2023 a las 17:39:08
+-- Tiempo de generación: 14-05-2023 a las 04:46:33
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -32,6 +32,18 @@ CREATE TABLE `tbl_avion` (
   `n_asientos` int(3) NOT NULL,
   `aerolinea` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_avion`
+--
+
+INSERT INTO `tbl_avion` (`matricula`, `n_asientos`, `aerolinea`) VALUES
+('HPT692', 44, 'Easy-Fly'),
+('ICKKCK', 82, 'Satena'),
+('IVP895', 30, 'Avianca'),
+('KVLP22', 30, 'Viva-Air'),
+('QWER901', 44, 'Satena'),
+('TUPAPA', 82, 'Hellsing');
 
 -- --------------------------------------------------------
 
@@ -86,6 +98,22 @@ CREATE TABLE `tbl_ruta` (
   `descripcion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `tbl_ruta`
+--
+
+INSERT INTO `tbl_ruta` (`id_ruta`, `descripcion`) VALUES
+(1, 'Apartadó - Medellín'),
+(3, 'Medellín - Apartadó'),
+(4, 'Turbo - Medellín'),
+(5, 'Medellín- Turbo'),
+(6, 'Apartadó - Turbo'),
+(7, 'Turbo - Apartadó'),
+(8, 'Apartadó - Cartagena'),
+(9, 'Cartagena - Medellín'),
+(10, 'Cartagena - Turbo'),
+(11, 'Apartadó - Churido');
+
 -- --------------------------------------------------------
 
 --
@@ -121,12 +149,27 @@ CREATE TABLE `tbl_vuelos` (
   `codigo_vuelo` int(3) NOT NULL,
   `matricula_avion` varchar(8) NOT NULL,
   `id_ruta` int(3) NOT NULL,
-  `fecha_salida` datetime NOT NULL,
-  `fecha_llegada` datetime NOT NULL,
+  `fecha_salida` date NOT NULL,
+  `fecha_llegada` date NOT NULL,
+  `hora_salida` time NOT NULL,
+  `hora_llegada` time NOT NULL,
   `estado` varchar(15) NOT NULL,
   `asientos_disponibles` int(2) NOT NULL,
-  `precio` float NOT NULL
+  `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_vuelos`
+--
+
+INSERT INTO `tbl_vuelos` (`codigo_vuelo`, `matricula_avion`, `id_ruta`, `fecha_salida`, `fecha_llegada`, `hora_salida`, `hora_llegada`, `estado`, `asientos_disponibles`, `precio`) VALUES
+(4, 'ICKKCK', 1, '2023-05-17', '2023-05-17', '06:20:00', '07:00:00', 'Disponible', 5, 129000),
+(6, 'HPT692', 3, '2023-05-17', '2023-05-17', '10:25:00', '11:15:00', 'Disponible', 10, 200000),
+(7, 'TUPAPA', 1, '2023-05-17', '2023-05-17', '12:15:00', '01:10:00', 'Disponible', 1, 130000),
+(8, 'KVLP22', 1, '2023-05-18', '2023-05-18', '13:45:00', '14:20:00', 'Disponible', 6, 230000),
+(9, 'ICKKCK', 9, '2023-05-19', '2023-05-19', '12:45:00', '14:00:00', 'Agotado', 0, 98000),
+(10, 'TUPAPA', 9, '2023-05-19', '2023-05-19', '16:00:00', '18:00:00', 'Disponible', 3, 129000),
+(11, 'TUPAPA', 9, '2023-05-19', '2023-05-19', '16:00:00', '18:00:00', 'Disponible', 3, 130000);
 
 --
 -- Índices para tablas volcadas
@@ -195,7 +238,7 @@ ALTER TABLE `tbl_vuelos`
 -- AUTO_INCREMENT de la tabla `tbl_ruta`
 --
 ALTER TABLE `tbl_ruta`
-  MODIFY `id_ruta` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ruta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_usuarios`
@@ -207,7 +250,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT de la tabla `tbl_vuelos`
 --
 ALTER TABLE `tbl_vuelos`
-  MODIFY `codigo_vuelo` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_vuelo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
