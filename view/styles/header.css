@@ -1,13 +1,17 @@
 /*------ Header-------*/
 
 nav{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: white;
     backdrop-filter: blur(5px);
-    height: 10vh;
+    height: 5vh;
     font-size: 22px;
     align-items: center;
 }
 
+nav img{
+    width: 40%;
+    height: auto;
+}
 nav a{
     color: #04e762;
     cursor: pointer;

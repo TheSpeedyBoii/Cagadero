@@ -20,7 +20,6 @@
 
 form{
   background-color: rgba(0, 0, 0, .2);
-  border-radius: 10px;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -65,14 +64,13 @@ label{
 
 
 .sites{
-  background-color: rgba(0, 0, 0, .5);
+  background-color: white;
   padding: 20px 20px;
   margin: 50px 0px;
-  border-radius: 20px;
 }
 
 .site-img{
-  color: white;
+  color: black;
 }
 .site-img img{
   opacity:0.5;

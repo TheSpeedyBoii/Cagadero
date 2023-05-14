@@ -1,7 +1,7 @@
 <?php
     include('conexion.php');
     class Vuelo{
-        
+
         public function getVuelos(){
                 $con = new Conexion();
                 $conn = $con->getConn();

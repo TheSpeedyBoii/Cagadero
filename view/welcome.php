@@ -50,7 +50,7 @@
                 </div>
                 <div class="col site-img">
                     <img src="images/landing/Medellin.jpg" alt="">
-                    <h2>Medellin</h2>
+                    <h2>Medellín</h2>
                     <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
                 </div>
                 <div class="col site-img">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col site-img">
                     <img src="images/landing/Apartado.jpg" alt="">
-                    <h2>Apartado</h2>
+                    <h2>Apartadó</h2>
                     <p>Descubre la mejor ciudad del Urabá. Montañas tropicales y banquetes culinarios extraordinarios por desucubrir en todo lugar ¡Te esperamos!</p>
                 </div>
             </div>
