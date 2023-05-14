@@ -30,7 +30,7 @@
                     }
             ?>
             </select>
-            <input type="date">
+            <input type="date" name="fecha">
             <input class="btn-buscar" type="submit" name="buscar_ruta">
             </form>
         </div>

@@ -31,7 +31,7 @@
 
     if (isset($_POST['boton'])) {
         include("conex.php");
-        $ruta = $_POST['ruta'];
+        $ruta = $_POST[$id];
         $resultados = mysqli_query($conexion, "SELECT * FROM $tablavuelos WHERE ruta = '$ruta'");
         if (mysqli_num_rows($resultados) > 0) {
             echo "
