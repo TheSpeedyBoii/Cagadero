@@ -1,5 +1,7 @@
 <?php
   require_once('../controller/C_consultas.php');
+  require_once '../controller/validar_sesion.php';
+  
 ?>
 
 <!DOCTYPE html>

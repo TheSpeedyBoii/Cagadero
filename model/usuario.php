@@ -22,7 +22,6 @@
             $stmt->bind_result($count);
             $stmt->fetch();
             $stmt->close();
-    
             return $count > 0;
         }
     }

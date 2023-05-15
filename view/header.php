@@ -15,6 +15,7 @@
         <a class="nav-link active" aria-current="page" href="#">Destinos</a>
         <a class="nav-link" href="#">Tarifas</a>
         <a class="nav-link" href="#">Conctáctanos</a>
+        <a class="nav-link" href="../controller/CtrlSalir.php">Salir</a>
     </nav>
 </header>
 </body>

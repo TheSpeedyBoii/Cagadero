@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2023 a las 04:46:33
+-- Tiempo de generación: 15-05-2023 a las 00:51:25
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -139,6 +139,13 @@ CREATE TABLE `tbl_usuarios` (
   `pass_user` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tbl_usuarios`
+--
+
+INSERT INTO `tbl_usuarios` (`id_usuario`, `name_user`, `mail_user`, `pass_user`) VALUES
+(12, 'Antonio', 'Harold.hoyosme@amigo.edu.co', 'c20ad4d76fe97759aa27a0c99bff6710');
+
 -- --------------------------------------------------------
 
 --
@@ -244,7 +251,7 @@ ALTER TABLE `tbl_ruta`
 -- AUTO_INCREMENT de la tabla `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_vuelos`
@@ -268,12 +275,6 @@ ALTER TABLE `tbl_detalle_reserva`
 ALTER TABLE `tbl_tiquete`
   ADD CONSTRAINT `fk_id_detalle` FOREIGN KEY (`id_detalle_reserva`) REFERENCES `tbl_detalle_reserva` (`id`),
   ADD CONSTRAINT `fk_reserva` FOREIGN KEY (`codigo_reserva`) REFERENCES `tbl_reserva` (`codigo_reserva`);
-
---
--- Filtros para la tabla `tbl_usuarios`
---
-ALTER TABLE `tbl_usuarios`
-  ADD CONSTRAINT `fk_emailusuario` FOREIGN KEY (`mail_user`) REFERENCES `tbl_reserva` (`email_usuario`);
 
 --
 -- Filtros para la tabla `tbl_vuelos`

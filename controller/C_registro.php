@@ -1,4 +1,5 @@
 <?php
+
 require_once '../model/conexion.php';
 require_once '../model/usuario.php';
 
@@ -40,11 +41,11 @@ public function registrar()
         return;
     }
 
-    $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-    $usuarios->agregarUsuario($nombre, $correo, $contrasena_hash);
-
+    $enContrasena = md5($_POST['contrasena']);
+    $usuarios->agregarUsuario($nombre, $correo, $enContrasena);
     header('Location: login.php');
     exit;
+
 }
 
 }

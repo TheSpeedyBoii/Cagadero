@@ -35,6 +35,7 @@
                     <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
                 </div>
                 <button type="submit" class="btn btn-primary">Registrarse</button>
+                <a href="login.php" class="btn btn-primary" >Login</a>
             </form>
         </div>
     </div>
