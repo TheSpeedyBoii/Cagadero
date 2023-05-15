@@ -1,5 +1,7 @@
 /*------ Section -----------*/
-
+*{
+  font-family: 'Roboto', sans-serif;
+}
 .background{
   background-image: url('../images/landing/background.jpg');
   background-repeat: no-repeat;
@@ -40,14 +42,20 @@ label{
   text-align: center;
 }
 
-
+.fecha{
+  border-radius: 5px;
+  border: none;
+  height: 36.7px;
+  width: 120px;
+}
 
 .btn-buscar {
   background-color: #6eeb83;
+  height: 37.6px;
   border: none;
   padding: 2px 10px;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
 

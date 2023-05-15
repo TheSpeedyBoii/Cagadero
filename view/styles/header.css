@@ -1,9 +1,11 @@
 /*------ Header-------*/
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
 nav{
     background-color: rgba(0, 0, 0, .6);
     backdrop-filter: blur(5px);
-    height: 8vh;
+    height: 10vh;
     font-size: 22px;
     align-items: center;
 }
@@ -13,7 +15,8 @@ nav img{
     height: auto;
 }
 nav a{
-    color: #04e762;
+    color: white;
+    text-decoration: none !important;
     cursor: pointer;
     transition: ease-in-out 0.15s;
 }
@@ -26,4 +29,15 @@ nav img{
     width: 170px;
     position:absolute;
     left: 10px;
+}
+.nav-link{
+    color: white;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: ease-in-out 0.15s;
+}
+.nav-link:hover{
+    color: #04e762;
+    text-decoration: none !important;
+    border-bottom: solid #04e762;
 }

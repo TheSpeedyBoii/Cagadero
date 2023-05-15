@@ -11,6 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/welcomeStyles.css">
@@ -35,7 +38,7 @@
             </div>
             <div class="col-auto">
                 <label for="inputPassword2">Fecha</label>
-                <input type="date" name="fecha">
+                <input class="fecha" type="date" name="fecha">
             </div>
             <div class="col-auto">
                 <input class="btn-buscar" type="submit" name="buscar_ruta" value="Consultar">
@@ -53,7 +56,7 @@
                 <div class="col site-img">
                     <img src="images/landing/Medellin.jpg" alt="">
                     <h2>Medellín</h2>
-                    <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, sus impresionantes vistas y su vibrante cultura.</p>
+                    <p>Descubre Medellín, una ciudad llena de vida en Colombia. Disfruta de su clima primaveral, y sus impresionantes vistas y su vibrante cultura.</p>
                 </div>
                 <div class="col site-img">
                     <img src="images/landing/Apartado.jpg" alt="">

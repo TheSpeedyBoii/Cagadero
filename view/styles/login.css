@@ -1,6 +1,6 @@
 body {
   background: rgb(69,123,157);
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 img{
   max-width: 300px;
