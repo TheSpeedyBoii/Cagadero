@@ -1,6 +1,9 @@
 body {
-    background: red;
-      font-family: 'Roboto', sans-serif;
+    background: url("../images/register/background.png");
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   img{
     max-width: 300px;
@@ -47,9 +50,9 @@ body {
     margin-top: 20px;
     justify-content: center;
     border: none;
-    background: rgb(115, 203, 209);
+    background: #26a96c;
     transition: ease-in-out 0.5s;
-    color: rgb(22, 22, 22);
+    color: whitesmoke;
   }
   .btn-primary:hover {
     background: #003049;
