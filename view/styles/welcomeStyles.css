@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
 }
 .background{
-  background-image: url('../images/landing/background.jpg');
+  background-image: url('../images/landing/Fondo.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@
   align-items: center;
   height: 15vh;
   color: white;
-  text-shadow: 2px 2px   black;
+  text-shadow: 2px 2px rgba(0, 0, 0, .2);
 }
 
 form{
@@ -91,7 +91,7 @@ label{
   height: auto;
   object-fit: cover;
   margin-bottom: 10px;
-  opacity:0.5;
+  opacity:0.75;
   transition: 1s ease;
 }
 
