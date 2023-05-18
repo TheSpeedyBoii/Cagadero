@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2023 a las 00:51:25
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 18-05-2023 a las 18:30:22
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `tbl_avion` (
   `matricula` varchar(8) NOT NULL,
   `n_asientos` int(3) NOT NULL,
   `aerolinea` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbl_avion`
@@ -57,7 +57,7 @@ CREATE TABLE `tbl_detalle_reserva` (
   `id_pasajero` int(10) NOT NULL,
   `codigo_vuelo` int(10) NOT NULL,
   `estado` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `tbl_pasajero` (
   `telefono` int(10) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -84,8 +84,9 @@ CREATE TABLE `tbl_reserva` (
   `estado` varchar(20) NOT NULL,
   `fecha` date NOT NULL,
   `email_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `precio_total` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `precio_total` float NOT NULL,
+  `Fk_Usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `tbl_reserva` (
 CREATE TABLE `tbl_ruta` (
   `id_ruta` int(3) NOT NULL,
   `descripcion` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbl_ruta`
@@ -124,7 +125,7 @@ CREATE TABLE `tbl_tiquete` (
   `codigo_tiquete` int(10) NOT NULL,
   `codigo_reserva` int(10) NOT NULL,
   `id_detalle_reserva` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -134,9 +135,9 @@ CREATE TABLE `tbl_tiquete` (
 
 CREATE TABLE `tbl_usuarios` (
   `id_usuario` int(11) NOT NULL,
-  `name_user` varchar(50) NOT NULL,
-  `mail_user` varchar(50) NOT NULL,
-  `pass_user` varchar(255) NOT NULL
+  `name_user` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `mail_user` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `pass_user` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -144,7 +145,9 @@ CREATE TABLE `tbl_usuarios` (
 --
 
 INSERT INTO `tbl_usuarios` (`id_usuario`, `name_user`, `mail_user`, `pass_user`) VALUES
-(12, 'Antonio', 'Harold.hoyosme@amigo.edu.co', 'c20ad4d76fe97759aa27a0c99bff6710');
+(12, 'Antonio', 'Harold.hoyosme@amigo.edu.co', 'c20ad4d76fe97759aa27a0c99bff6710'),
+(13, 'harold', 'harold@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(14, 'harold', 'haroldhoyos@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759');
 
 -- --------------------------------------------------------
 
@@ -163,7 +166,7 @@ CREATE TABLE `tbl_vuelos` (
   `estado` varchar(15) NOT NULL,
   `asientos_disponibles` int(2) NOT NULL,
   `precio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbl_vuelos`
@@ -206,7 +209,8 @@ ALTER TABLE `tbl_pasajero`
 --
 ALTER TABLE `tbl_reserva`
   ADD PRIMARY KEY (`codigo_reserva`),
-  ADD KEY `email_usuario` (`email_usuario`);
+  ADD KEY `email_usuario` (`email_usuario`),
+  ADD KEY `Fk_Usuario` (`Fk_Usuario`);
 
 --
 -- Indices de la tabla `tbl_ruta`
@@ -251,7 +255,7 @@ ALTER TABLE `tbl_ruta`
 -- AUTO_INCREMENT de la tabla `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_vuelos`
@@ -268,6 +272,12 @@ ALTER TABLE `tbl_vuelos`
 --
 ALTER TABLE `tbl_detalle_reserva`
   ADD CONSTRAINT `fk_pasajero` FOREIGN KEY (`id_pasajero`) REFERENCES `tbl_pasajero` (`id_pasajero`);
+
+--
+-- Filtros para la tabla `tbl_reserva`
+--
+ALTER TABLE `tbl_reserva`
+  ADD CONSTRAINT `tbl_reserva_ibfk_1` FOREIGN KEY (`Fk_Usuario`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tbl_tiquete`

@@ -56,6 +56,7 @@
           echo"<td>".$vuelo['estado']."</td>";
           echo"<td>".$vuelo['asientos_disponibles']."</td>";
           echo "<td>COP " . number_format($vuelo['precio'], 0, ',', '.') . "</td>";
+          echo '<td><input class="btn-buscar" type="submit" name="buscar_ruta" value="'.$vuelo['codigo_vuelo'].'"></td>';
         }
       }
     ?>
