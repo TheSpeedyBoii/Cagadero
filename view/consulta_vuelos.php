@@ -46,8 +46,10 @@
         echo"</tr>";
       }else{
         foreach($vuelos as $vuelo){
+          echo'<form action="reserva.php" method="get">';
           echo"<tr>";
           echo"<td>".$vuelo['codigo_vuelo']."</td>";
+          echo '<input type="hidden" name="fila" value="' . htmlspecialchars(serialize($vuelo)) . '">';
           echo"<td>".$vuelo['ruta']."</td>";
           echo"<td>".$vuelo['fecha_salida']."</td>";
           echo"<td>".$vuelo['fecha_llegada']."</td>";
@@ -56,7 +58,8 @@
           echo"<td>".$vuelo['estado']."</td>";
           echo"<td>".$vuelo['asientos_disponibles']."</td>";
           echo "<td>COP " . number_format($vuelo['precio'], 0, ',', '.') . "</td>";
-          echo '<td><input class="btn-buscar" type="submit" name="buscar_ruta" value="'.$vuelo['codigo_vuelo'].'"></td>';
+          echo '<td><input class="btn-buscar" type="submit" name="reserva_btn" value="✔"></td>';
+          echo'</form>';
         }
       }
     ?>
