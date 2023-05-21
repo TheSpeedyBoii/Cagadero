@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2023 a las 18:34:06
+-- Tiempo de generación: 21-05-2023 a las 04:27:01
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -72,6 +72,13 @@ CREATE TABLE `tbl_pasajero` (
   `fecha_nacimiento` date NOT NULL,
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_pasajero`
+--
+
+INSERT INTO `tbl_pasajero` (`id_pasajero`, `nombre`, `telefono`, `fecha_nacimiento`, `email`) VALUES
+(1, 'sjdfhsdjkfhsdjkfhjk', 2147483647, '2000-08-30', 'donchepo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -195,7 +202,7 @@ ALTER TABLE `tbl_avion`
 --
 ALTER TABLE `tbl_detalle_reserva`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_pasajero` (`id_pasajero`);
+  ADD KEY `fk_idpasajerO` (`id_pasajero`);
 
 --
 -- Indices de la tabla `tbl_pasajero`
@@ -244,6 +251,12 @@ ALTER TABLE `tbl_vuelos`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `tbl_pasajero`
+--
+ALTER TABLE `tbl_pasajero`
+  MODIFY `id_pasajero` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `tbl_ruta`
 --
 ALTER TABLE `tbl_ruta`
@@ -269,7 +282,7 @@ ALTER TABLE `tbl_vuelos`
 -- Filtros para la tabla `tbl_detalle_reserva`
 --
 ALTER TABLE `tbl_detalle_reserva`
-  ADD CONSTRAINT `fk_pasajero` FOREIGN KEY (`id_pasajero`) REFERENCES `tbl_pasajero` (`id_pasajero`);
+  ADD CONSTRAINT `fk_idpasajerO` FOREIGN KEY (`id_pasajero`) REFERENCES `tbl_pasajero` (`id_pasajero`);
 
 --
 -- Filtros para la tabla `tbl_tiquete`

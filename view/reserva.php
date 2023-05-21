@@ -1,7 +1,10 @@
 <?php
-   /*  require_once('../controller/C_Reserva.php'); */
-   require_once('../controller/C_consultas.php');
    require_once '../controller/validar_sesion.php';
+   require_once '../controller/C_pasajero.php';
+   require_once '../model/conexion.php';
+
+   $control = new C_pasajero();
+   $control->registrarPasajero();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +23,7 @@
 <div class="reserva"><h1>Has tu reserva</h1></div>
     <div class="container">
         <div class="form-container">
-            <form action="reserva.php?action=reserva" method="post">
+            <form action="" method="post">
             <h4>Vuelo Seleccionado</h4>
             <?php
                 if (isset($_GET['fila'])) {
@@ -36,17 +39,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="Telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su telefono">
+                    <input type="text" class="form-control" name="telefono" id="nombre" placeholder="Ingrese su telefono">
+                </div>
+                <div class="mb-3">
+                    <label for="fechaedad">Fecha de Nacimiento</label>
+                    <input class="fecha" type="date" name="fechaedad">
                 </div>
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo">
                 </div>
-                <div class="col-auto">
-                <label for="FechaNC">Fecha de Nacimiento</label>
-                <input class="fecha" type="date" name="fecha">
-            </div>
-                <button type="submit" class="btn btn-primary">Reservar</button>
+                <button type="submit" class="btn btn-primary" name="reserva">Reservar</button>
             </form>
         </div>
     </div>
