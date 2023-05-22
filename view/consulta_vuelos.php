@@ -46,7 +46,7 @@
         echo"</tr>";
       }else{
         foreach($vuelos as $vuelo){
-          echo'<form action="reserva.php" method="get">';
+          echo'<form action="pasajero.php" method="get">';
           echo"<tr>";
           echo"<td>".$vuelo['codigo_vuelo']."</td>";
           echo '<input type="hidden" name="fila" value="' . htmlspecialchars(serialize($vuelo)) . '">';

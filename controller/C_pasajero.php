@@ -1,6 +1,6 @@
 <?php
     require_once("../model/conexion.php");
-    require_once("../model/pasajero.php");
+    require_once("../model/M_pasajero.php");
 
     class C_pasajero{
 
@@ -23,6 +23,8 @@
                 echo "La dirección de correo electrónico no es válida";
                 return;
             }
+
+            
     
             $conexion = new Conexion();
             $pasajero = new pasajero($conexion->getConn());
