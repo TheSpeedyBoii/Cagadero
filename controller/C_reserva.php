@@ -5,17 +5,20 @@
     class C_reserva{
 
         function registrarReserva(){
-            if(isset($_POST['calcular'])){
-            $fecha_actual = date('Y-m-d');
-            $precio_total = $_POST['precio_total'];
+            if (isset($_POST['reserva'])) {
+                $asientos = $_POST['asientos'];
+                $precio = $_POST['precio'];
+                $precio_total = $asientos * $precio;
 
-            $conexion = new Conexion();
-            $reserva = new reserva($conexion->getConn());
+                $fecha_actual = date('Y-m-d');
 
-            $reserva->agregarReserva($fecha_actual, $precio_total);
+                $conexion = new Conexion();
+                $reserva = new reserva($conexion->getConn());
 
+                $reserva->agregarReserva($fecha_actual, $precio_total);
             }
         }
+
 
     }
 

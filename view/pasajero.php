@@ -31,26 +31,15 @@
                 <h4>Vuelo Seleccionado</h4>
                 <?php
                     if (isset($_GET['fila'])) {
-                           $fila = unserialize($_GET['fila']);
-                        echo "<h2>" . $fila['codigo_vuelo'] . "</h2>";
-                        echo "<h2>" . $fila['ruta'] . "</h2>";
-                        echo "<h2>" . $fila['precio'] . "</h2>";
+                        $fila = unserialize($_GET['fila']);
+                        $precio = $fila['precio'];
+                        echo "<h2>" . $precio . "</h2>";
                     }
                 ?>
                     <label for="asientos" class="form-label">Número de asientos</label>
                     <div class="mb-3 col-md-1">
-                        <input type="number" class="form-control" name="asientos" placeholder="1">
-                        <?php
-                                if(isset($_POST['reserva'])){
-                                    $asientos = $_POST['asientos'];
-                                    $precio_total = $asientos*$fila['precio'];
-                                    echo '<form action="../controller/C_reserva.php" method="post">
-                                          <input type="hidden" name="precio_total" value="'.$precio_total.'">
-                                          <input class="btn-buscar" type="submit" name="calcular" value="✔">
-                                          </form>
-                                          ';
-                                }
-                                ?>
+                        <input type="number" class="form-control" name="asientos" placeholder="0">
+                        <input type="hidden" name="precio" value="<?php echo $precio; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre Pasajero</label>
@@ -68,26 +57,7 @@
                         <label for="correo" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo">
                     </div>
-                    <button type="submit" class="btn btn-primary" name="reserva">Reservar</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Ver Reserva
-                    </button>
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Understood</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-primary" name="reserva" formnovalidate>Reservar</button>
                 </form>
             </div>
     </div>
