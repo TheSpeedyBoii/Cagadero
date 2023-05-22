@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2023 a las 04:27:01
+-- Tiempo de generación: 22-05-2023 a las 20:53:36
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -78,7 +78,7 @@ CREATE TABLE `tbl_pasajero` (
 --
 
 INSERT INTO `tbl_pasajero` (`id_pasajero`, `nombre`, `telefono`, `fecha_nacimiento`, `email`) VALUES
-(1, 'sjdfhsdjkfhsdjkfhjk', 2147483647, '2000-08-30', 'donchepo@gmail.com');
+(21, 'pepinho', 3290329, '2000-08-30', 'djasidjas@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -90,9 +90,18 @@ CREATE TABLE `tbl_reserva` (
   `codigo_reserva` int(10) NOT NULL,
   `estado` varchar(20) NOT NULL,
   `fecha` date NOT NULL,
-  `email_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `precio_total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_reserva`
+--
+
+INSERT INTO `tbl_reserva` (`codigo_reserva`, `estado`, `fecha`, `precio_total`) VALUES
+(1, '', '2023-05-22', 780000),
+(2, '', '2023-05-22', 780000),
+(3, '', '2023-05-22', 780000),
+(4, '', '2023-05-22', 780000);
 
 -- --------------------------------------------------------
 
@@ -214,8 +223,7 @@ ALTER TABLE `tbl_pasajero`
 -- Indices de la tabla `tbl_reserva`
 --
 ALTER TABLE `tbl_reserva`
-  ADD PRIMARY KEY (`codigo_reserva`),
-  ADD KEY `email_usuario` (`email_usuario`);
+  ADD PRIMARY KEY (`codigo_reserva`);
 
 --
 -- Indices de la tabla `tbl_ruta`
@@ -228,8 +236,7 @@ ALTER TABLE `tbl_ruta`
 --
 ALTER TABLE `tbl_tiquete`
   ADD PRIMARY KEY (`codigo_tiquete`),
-  ADD KEY `id_detalle_reserva` (`id_detalle_reserva`),
-  ADD KEY `codigo_reserva` (`codigo_reserva`);
+  ADD KEY `id_detalle_reserva` (`id_detalle_reserva`);
 
 --
 -- Indices de la tabla `tbl_usuarios`
@@ -254,7 +261,13 @@ ALTER TABLE `tbl_vuelos`
 -- AUTO_INCREMENT de la tabla `tbl_pasajero`
 --
 ALTER TABLE `tbl_pasajero`
-  MODIFY `id_pasajero` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pasajero` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_reserva`
+--
+ALTER TABLE `tbl_reserva`
+  MODIFY `codigo_reserva` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_ruta`
@@ -288,8 +301,7 @@ ALTER TABLE `tbl_detalle_reserva`
 -- Filtros para la tabla `tbl_tiquete`
 --
 ALTER TABLE `tbl_tiquete`
-  ADD CONSTRAINT `fk_id_detalle` FOREIGN KEY (`id_detalle_reserva`) REFERENCES `tbl_detalle_reserva` (`id`),
-  ADD CONSTRAINT `fk_reserva` FOREIGN KEY (`codigo_reserva`) REFERENCES `tbl_reserva` (`codigo_reserva`);
+  ADD CONSTRAINT `fk_id_detalle` FOREIGN KEY (`id_detalle_reserva`) REFERENCES `tbl_detalle_reserva` (`id`);
 
 --
 -- Filtros para la tabla `tbl_vuelos`
