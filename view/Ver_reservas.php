@@ -102,7 +102,6 @@
         </div>
       </div>
       <br>
-      <a href="pasajero.php"><button class="btn btn-primary">Reserva</button></a>
     </div>
 </body>
 </html>
