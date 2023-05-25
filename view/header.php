@@ -15,9 +15,8 @@
 <header>
     <nav class="nav nav justify-content-end">
         <img src="images/register/logo.png" alt="">
-        <a class="nav-link active" aria-current="page" href="#">Destinos</a>
-        <a class="nav-link" href="#">Tarifas</a>
-        <a class="nav-link" href="#">Conctáctanos</a>
+        <a class="nav-link active" aria-current="page" href="welcome.php">Inicio</a>
+        <a class="nav-link" href="Ver_reservas.php">Reservas</a>
         <a class="nav-link" href="../controller/CtrlSalir.php">Salir</a>
     </nav>
 </header>

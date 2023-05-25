@@ -26,14 +26,18 @@
  ?>
     <div class="container" style="display:flex; justify-content: space-around;">
             <div class="col-md-6">
-                <h2 class="text-center">Has tu reserva</h2>
+                <h2 class="text-center">Realiza tu reserva</h2>
                 <form action="" method="post">
                 <h4>Vuelo Seleccionado</h4>
                 <?php
                     if (isset($_GET['fila'])) {
                         $fila = unserialize($_GET['fila']);
+                        $id = $fila['codigo_vuelo'];
+                        $ruta = $fila['ruta'];
                         $precio = $fila['precio'];
                         echo "<h2>" . $precio . "</h2>";
+                        echo "<h2>" . $id . "</h2>";
+                        echo "<h2>" . $ruta . "</h2>";
                     }
                 ?>
                     <label for="asientos" class="form-label">Número de asientos</label>
