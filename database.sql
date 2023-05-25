@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2023 a las 20:53:36
+-- Tiempo de generación: 25-05-2023 a las 04:03:08
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -73,13 +73,6 @@ CREATE TABLE `tbl_pasajero` (
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `tbl_pasajero`
---
-
-INSERT INTO `tbl_pasajero` (`id_pasajero`, `nombre`, `telefono`, `fecha_nacimiento`, `email`) VALUES
-(21, 'pepinho', 3290329, '2000-08-30', 'djasidjas@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -88,20 +81,9 @@ INSERT INTO `tbl_pasajero` (`id_pasajero`, `nombre`, `telefono`, `fecha_nacimien
 
 CREATE TABLE `tbl_reserva` (
   `codigo_reserva` int(10) NOT NULL,
-  `estado` varchar(20) NOT NULL,
   `fecha` date NOT NULL,
   `precio_total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `tbl_reserva`
---
-
-INSERT INTO `tbl_reserva` (`codigo_reserva`, `estado`, `fecha`, `precio_total`) VALUES
-(1, '', '2023-05-22', 780000),
-(2, '', '2023-05-22', 780000),
-(3, '', '2023-05-22', 780000),
-(4, '', '2023-05-22', 780000);
 
 -- --------------------------------------------------------
 
@@ -162,7 +144,8 @@ CREATE TABLE `tbl_usuarios` (
 INSERT INTO `tbl_usuarios` (`id_usuario`, `name_user`, `mail_user`, `pass_user`) VALUES
 (12, 'Antonio', 'Harold.hoyosme@amigo.edu.co', 'c20ad4d76fe97759aa27a0c99bff6710'),
 (13, 'Papomans', 'lewansex@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
-(14, 'DonChimbo', 'juan69@gmail.com', '25d55ad283aa400af464c76d713c07ad');
+(14, 'DonChimbo', 'juan69@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
+(15, 'donpepilio', 'donpepilio@gmail.com', '25d55ad283aa400af464c76d713c07ad');
 
 -- --------------------------------------------------------
 
@@ -261,13 +244,13 @@ ALTER TABLE `tbl_vuelos`
 -- AUTO_INCREMENT de la tabla `tbl_pasajero`
 --
 ALTER TABLE `tbl_pasajero`
-  MODIFY `id_pasajero` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_pasajero` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_reserva`
 --
 ALTER TABLE `tbl_reserva`
-  MODIFY `codigo_reserva` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codigo_reserva` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_ruta`
@@ -279,7 +262,7 @@ ALTER TABLE `tbl_ruta`
 -- AUTO_INCREMENT de la tabla `tbl_usuarios`
 --
 ALTER TABLE `tbl_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_vuelos`
